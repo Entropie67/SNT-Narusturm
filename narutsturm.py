@@ -24,7 +24,7 @@ perso = pygame.image.load("images/narut0.png").convert_alpha()
 perso = pygame.transform.scale(perso, (20, 50))
 # On colle le personnage
 fenetre.blit(perso, (200,300))
-
+position = perso.get_rect()
 # Il faut penser à rafraichir l'écran ! (Surtout en été)
 pygame.display.flip()
 
@@ -36,3 +36,10 @@ while continuer:
         if event.type == QUIT:
             pygame.quit()
             continuer = 0
+        if event.type == KEYDOWN:
+            if event.key == K_RIGHT:
+                print("Tu veux aller à droite")
+                position = position.move(2, 0)
+    fenetre.blit(perso, position)
+    pygame.display.flip()
+
