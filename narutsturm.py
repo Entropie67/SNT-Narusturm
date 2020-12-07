@@ -39,7 +39,13 @@ while continuer:
         if event.type == KEYDOWN:
             if event.key == K_RIGHT:
                 print("Tu veux aller à droite")
-                position = position.move(2, 0)
+                position = position.move(5, 0)
+
+        #ICI RAJOUTER LES AUTRES DEPLACEMENT
+
+
+
+    fenetre.fill(couleur)
     fenetre.blit(perso, position)
     pygame.display.flip()
 
