@@ -18,6 +18,13 @@ pygame.display.set_caption("Narusturm !")
 couleur = (92, 107, 192)
 fenetre.fill(couleur)
 
+# Chargement du personnage
+perso = pygame.image.load("images/narut0.png").convert_alpha()
+# On redimensionne l'image en 20 px de large et 50 de haut
+perso = pygame.transform.scale(perso, (20, 50))
+# On colle le personnage
+fenetre.blit(perso, (200,300))
+
 
 
 # Il faut penser à rafraichir l'écran ! (Surtout en été)
