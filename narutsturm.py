@@ -25,12 +25,14 @@ perso = pygame.transform.scale(perso, (20, 50))
 # On colle le personnage
 fenetre.blit(perso, (200,300))
 
-
-
 # Il faut penser à rafraichir l'écran ! (Surtout en été)
 pygame.display.flip()
 
 # Boucle de jeu, "infinie", parce que le jeu doit continuer tant que je ne l'arrête pas
-continuer = 1
+continuer = True
+
 while continuer:
-	continuer = int(input())
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            continuer = 0
